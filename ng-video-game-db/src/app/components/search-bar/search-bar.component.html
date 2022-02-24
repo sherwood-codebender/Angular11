@@ -1,0 +1,8 @@
+<div class="search-container">
+  <span class="logo" routerLink="/"><img src="https://raw.githubusercontent.com/sherwood-codebender/Sorimachi_AndroidApp/master/assets/%5BC%5DSorimachi_Viettnam.png" class="img-logo" /></span>
+
+  <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <input class="search-input" name="search" ngModel placeholder="Search 500,000+ game" />
+    <button class="search-button">Search</button>
+  </form>
+</div>
