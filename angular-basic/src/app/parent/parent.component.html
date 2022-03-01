@@ -1,1 +1,2 @@
-<app-child (messageEvent)="receiveMessage($event)"></app-child>
+<app-child (messageEvent)="receiveMessage($event)" (increaseEvent)="receiveCount($event)"></app-child>
+{{countDisplay}}

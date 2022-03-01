@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -9,7 +9,8 @@ export class ChildComponent implements OnInit {
 
   @Input() childMessage: string | undefined;
   @Output() messageEvent = new EventEmitter<string>();
-
+  @Output() increaseEvent = new EventEmitter<any>();
+  count: any = 0;
   constructor() { }
 
   ngOnInit(): void {
@@ -19,4 +20,8 @@ export class ChildComponent implements OnInit {
     this.messageEvent.emit('Hello from child');
   }
 
+  countHandler() {
+    this.count += 1;
+    this.increaseEvent.emit(this.count);
+  }
 }
