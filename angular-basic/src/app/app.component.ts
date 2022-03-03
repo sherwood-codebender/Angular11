@@ -27,4 +27,6 @@ export class AppComponent {
     
       return b;
   }
+
+  itemImageUrl = 'https://cdnmedia.baotintuc.vn/Upload/lQuX6s340fSBU8AUyrDPxg/files/2022/03/putin-nga-tyleungho.jpg';
 }
