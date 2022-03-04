@@ -2,10 +2,23 @@ import { Component, OnInit, NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-hello-world',
-  template: `
-<input type="text" [(ngModel)] = "title" />
-           <h1>{{title}}</h1>
-`,
+  template:`
+  <h1 *ngIf = "sherwood"> {{name}} </h1>
+  <table border="1">
+    <thead>
+     
+        <th>Name</th>
+      <th>Age</th>
+ 
+    </thead>
+    <tr *ngFor="let item of sherwood_data">
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+    </tr>
+  </table>
+
+`
+  ,
   styles: [`
    h1{
     color: blue;  
@@ -13,8 +26,17 @@ import { Component, OnInit, NgModule } from '@angular/core';
 })
 
 export class HelloWorldComponent {
-  title = "";
 
+  sherwood = false;
+  name = "sherwood";
   
-  
+  sherwood_data = [{
+      name: "alan",
+      age: 19
+    },
+    {
+      name: "Katarina",
+      age: 21
+    }
+  ]
 }
