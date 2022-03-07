@@ -1,0 +1,27 @@
+<h1 *ngIf="sherwood"> {{name}} </h1>
+<table border="1">
+  <thead>
+
+  <th>Name</th>
+  <th>Age</th>
+
+  </thead>
+  <tr *ngFor="let item of sherwood_data">
+    <td>{{item.name}}</td>
+    <td>{{item.age}}</td>
+  </tr>
+</table>
+
+<h1> Simple Form in Angular</h1>
+<form #simpleForm="ngForm" (ngSubmit)="getValues(simpleForm.value)">
+  <input type="text" ngModel name="user" placeholder="enter user name" />
+  <br /><br />
+  <input type="password" ngModel name="pass" placeholder="enter user password" />
+  <br /><br />
+  <button (click)="handleStatus()">Get User Values</button>
+</form>
+
+<!--<button (click)="handleStatus()"> {{status}} </button>-->
+<h3 *ngIf='status' [ngStyle]="styleStatus ? {'color': 'red'} : {'color': 'blue'}" > {{obj.user}} </h3>
+
+<input type="text" placeholder="Don't typing'"  [(ngModel)] ="obj.user"  (ngModelChange)="handleStyle()"/>
