@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy  } from '@angular/core';
+import { CallAPIService } from './call-api.service';
 
 @Component({
   selector: 'app-root',
@@ -29,4 +30,26 @@ export class AppComponent {
   }
 
   itemImageUrl = 'https://cdnmedia.baotintuc.vn/Upload/lQuX6s340fSBU8AUyrDPxg/files/2022/03/putin-nga-tyleungho.jpg';
+
+  data = [{
+    name: 'Sherwood',
+    age: '22',
+    gender: 'male'
+  },
+  {
+    name: 'Katarina',
+    age: '21',
+    gender: 'female'
+  },
+  ]
+  data_from_api: any;
+  constructor(private user: CallAPIService) {
+    this.user.getData().subscribe(data => {
+      this.data_from_api = data
+    })
+   
+  }
+
+  
+  
 }

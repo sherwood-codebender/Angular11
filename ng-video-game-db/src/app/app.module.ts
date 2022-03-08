@@ -7,7 +7,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { GaugeModule } from 'angular-gauge';
 import { MatTabsModule } from '@angular/material/tabs';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
@@ -22,11 +22,12 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    GaugeModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    GaugeModule.forRoot(),
+    BrowserAnimationsModule,
     MatFormFieldModule,
+    MatSelectModule,
     MatTabsModule,
     MatIconModule,
   ],

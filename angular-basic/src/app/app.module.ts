@@ -5,19 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world.component';
 import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './child/child.component'
-
+import { ChildComponent } from './child/child.component';
+import { UserComponent } from './user/user.component'
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
     ParentComponent,
     ChildComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

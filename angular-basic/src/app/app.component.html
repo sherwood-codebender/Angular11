@@ -1,3 +1,16 @@
 <app-parent></app-parent>
 <img [src]='itemImageUrl' />
 <app-hello-world></app-hello-world>
+<br />
+<div *ngFor="let item of data">
+  <app-user [user_data]="item"></app-user>
+</div>
+
+<a routerLink="parent">Parent</a> <br />
+<a routerLink="child">Child</a>
+
+<router-outlet></router-outlet>
+
+<p *ngFor="let item of data_from_api">
+  {{item.title}}
+</p>

@@ -24,4 +24,6 @@ export class ChildComponent implements OnInit {
     this.count += 1;
     this.increaseEvent.emit(this.count);
   }
+
+  
 }
