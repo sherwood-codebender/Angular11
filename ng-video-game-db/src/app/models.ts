@@ -1,6 +1,6 @@
 export interface Game {
   id: string,
-  background_image: string;
+  background_image: string | null | undefined;
   name: string;
   released: string;
   metacritic_url: string;
@@ -11,7 +11,7 @@ export interface Game {
   parent_platforms: Array<ParentPlatform>;
   publishers: Array<Publishers>;
   ratings: Array<Rating>;
-  screenshots: Array<Screenshots>;
+  short_screenshots: Array<Screenshots>;
   trailers: Array<Trailer>;
 }
 
@@ -42,6 +42,7 @@ interface Rating {
 }
 
 interface Screenshots {
+  id: number;
   image: string;
 }
 

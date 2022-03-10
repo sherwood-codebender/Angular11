@@ -39,7 +39,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   openGameDetails(id: string): void {
-    this.router.navigate(['details', id])
+    let short_screenshots = this.games.find(item => { item.id === id })?.short_screenshots
+    this.router.navigate(['details', { id, short_screenshots }])
   }
 
   ngOnDestroy(): void {
@@ -48,7 +49,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     if (this.routeSub) {
-      this.gamesub.unsubscribe();
+      this.routeSub.unsubscribe();
     }
   }
 }
