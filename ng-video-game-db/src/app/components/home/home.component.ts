@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Params, Route, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Params, Route, Router } from '@angular/router';
 import { APIResponse, Game } from '../../models';
 import { HttpService } from '../../services/http.service';
 import { Subscription } from 'rxjs';
@@ -39,8 +39,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   openGameDetails(id: string): void {
-    let short_screenshots = this.games.find(item => { item.id === id })?.short_screenshots
-    this.router.navigate(['details', { id, short_screenshots }])
+    //const navigationExtras: NavigationExtras = {
+    //  state: {
+    //    id: id,
+    //    short_screenshots: 
+    //  }
+    //};
+    /*let short_screenshots = this.games.find(item => item.id == id)?.short_screenshots*/
+    
+    //console.log(short_screenshots)
+    this.router.navigate(['details', id], { state: { short_screenshots: this.games.find(item => item.id == id)?.short_screenshots } })
+   
   }
 
   ngOnDestroy(): void {
