@@ -33,11 +33,12 @@
     </mat-tab>
 
     <mat-tab label="Screenshots" *ngIf="short_screenshots?.length">
-      <img
-           *ngFor="let short_screenshot of short_screenshots"
-           class="game-screenshot"
-           src="{{short_screenshot.image}}"
-           alt="screenshot" />
+      <a routerLink="">
+        <img *ngFor="let short_screenshot of short_screenshots"
+             class="game-screenshot"
+             src="{{short_screenshot.image}}"
+             alt="screenshot" />
+      </a>
     </mat-tab>
 
     <mat-tab label="Trailers" *ngIf="game.trailers?.length">
